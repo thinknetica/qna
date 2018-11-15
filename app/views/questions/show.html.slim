@@ -1,2 +1,11 @@
 h1= @question.title
 p= @question.body
+
+.answers
+  = render 'answers'
+
+= render 'shared/errors', resource: @answer
+= form_with model: [@question, @answer] do |f|
+  = f.label :body, 'Your answer'
+  = f.text_area :body
+  = f.submit 'Create'
