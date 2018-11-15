@@ -2,7 +2,8 @@ h1= @question.title
 p= @question.body
 
 .answers
-  = render 'answers'
+  - @question.answers.each do |answer|
+    p= answer.body
 
 = render 'shared/errors', resource: @answer
 = form_with model: [@question, @answer] do |f|
