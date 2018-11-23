@@ -5,6 +5,12 @@ p= @question.body
   - @question.files.each do |file|
     p= link_to file.filename.to_s, url_for(file)
 
+.links
+  p Links:
+  ul
+    - @question.links.each do |link|
+      li= link_to link.name, link.url
+
 .answers
   = render @question.answers
 
@@ -13,4 +19,13 @@ p= @question.body
 = form_with model: [@question, @answer], class: 'new-answer' do |f|
   = f.label :body, 'Your answer'
   = f.text_area :body
+  p Links:
+  p
+    = f.fields_for :links do |l|
+      p
+        = l.label :name, 'Link name'
+        = l.text_field :name
+      p
+        = l.label :url
+        = l.text_field :url
   = f.submit 'Create'
