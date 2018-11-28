@@ -16,7 +16,7 @@ p= @question.body
 
 .answer-errors
   = render 'shared/errors', resource: @answer
-= form_with model: [@question, @answer], class: 'new-answer' do |f|
+= form_with model: [@question, @answer], class: 'new-answer', data: { type: :html } do |f|
   = f.label :body, 'Your answer'
   = f.text_area :body
   p Links:
@@ -29,3 +29,5 @@ p= @question.body
         = l.label :url
         = l.text_field :url
   = f.submit 'Create'
+
+= link_to 'Back', questions_path, remote: true

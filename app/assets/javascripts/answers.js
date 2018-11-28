@@ -6,4 +6,15 @@ $(document).on('turbolinks:load', function(){
        console.log(answerId);
        $('form#edit-answer-' + answerId).removeClass('hidden');
    })
+
+   $('form.new-answer').on('ajax:success', function(e) {
+       var xhr = e.detail[2];
+
+       $('.answers').append(xhr.responseText);
+   })
+       .on('ajax:error', function (e) {
+           var xhr = e.detail[2];
+
+           $('.answer-errors').html(xhr.responseText);
+       })
 });
