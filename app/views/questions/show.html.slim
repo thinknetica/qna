@@ -16,7 +16,7 @@ p= @question.body
 
 .answer-errors
   = render 'shared/errors', resource: @answer
-= form_with model: [@question, @answer], class: 'new-answer', data: { type: :html } do |f|
+= form_with model: [@question, @answer], class: 'new-answer', data: { type: :json } do |f|
   = f.label :body, 'Your answer'
   = f.text_area :body
   p Links:
