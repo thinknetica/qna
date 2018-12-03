@@ -16,6 +16,8 @@ gem 'slim-rails'
 gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
