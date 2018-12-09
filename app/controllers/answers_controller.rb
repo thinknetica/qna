@@ -1,7 +1,10 @@
 class AnswersController < ApplicationController
+  authorize_resource
+
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)
+    @answer.user = current_user
 
     respond_to do |format|
       if @answer.save

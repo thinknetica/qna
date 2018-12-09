@@ -18,6 +18,7 @@ gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'cancancan'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
