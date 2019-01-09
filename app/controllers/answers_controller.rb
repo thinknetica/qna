@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  authorize_resource
+  #authorize_resource
 
   def create
     @question = Question.find(params[:question_id])
@@ -19,6 +19,8 @@ class AnswersController < ApplicationController
 
   def update
     @answer = Answer.find(params[:id])
+    authorize @answer
+    
     @answer.update(answer_params)
     @question = @answer.question
   end
