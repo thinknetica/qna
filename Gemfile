@@ -20,6 +20,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'cancancan'
 gem 'pundit'
+gem 'doorkeeper'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
