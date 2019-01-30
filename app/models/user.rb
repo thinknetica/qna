@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :questions
   has_many :authorizations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
