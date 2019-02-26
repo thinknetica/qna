@@ -10,6 +10,7 @@ require "capistrano/passenger"
 require "capistrano/sidekiq"
 require 'thinking_sphinx/capistrano'
 require 'whenever/capistrano'
+require 'capistrano3/unicorn'
 
 # Load the SCM plugin appropriate to your project:
 #
